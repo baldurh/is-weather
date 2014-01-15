@@ -80,6 +80,25 @@ function getJsonData(url, callback){
 
 /** Exports **/
 
+function info(callback) {
+  return callback(null, {
+    results: [
+      {
+        info: "This is an api for Icelandic weather reports and observations",
+        endpoints: {
+          forecasts: "/weather/forecasts/",
+          observations: "/weather/observations/",
+          texts: "/weather/texts/"
+        },
+        other: {
+          availableStations: "/weather/getAvailableStations"
+        }
+      }
+    ]
+  });
+}
+
+
 /* Available stations handler */
 function availableStations(callback) {
   request(stationListURL, function (error, response, body) {
@@ -203,7 +222,7 @@ function observations(options, callback) {
     };
     return callback(null, observations);
   });
-});
+};
 
 /* Texts */
 function texts(options, callback) {
@@ -214,7 +233,7 @@ function texts(options, callback) {
       example  = '/weather/texts/is?types=5,6';
 
   if (!types) {
-    return callback(new Error('Types missing'));
+    return callback(new Error('No types supplied'));
   }
   if (['is','en'].indexOf(lang) == -1) {
     return callback(new Error("Incorrect language -- only 'is' or 'en' allowed"));
@@ -237,7 +256,7 @@ function texts(options, callback) {
     };
     return callback(null, texts);
   });
-});
+};
 
 exports.availableStations = availableStations;
 exports.forecasts = forecasts;
