@@ -1,0 +1,34 @@
+{
+  "name": "is-weather",
+  "version": "0.0.1",
+  "description": "A library to get Icelandic weather forecasts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/baldurh/is-weather-api.git"
+  },
+  "keywords": [
+    "weather",
+    "apis",
+    "iceland"
+  ],
+  "author": {
+    "name": "Baldur Már Helgason",
+    "email": "baldur.helgason@gmail.com"
+    },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/baldurh/is-weather-api/issues"
+  },
+  "dependencies": {
+    "cheerio": "~0.13.1",
+    "request" : "~2.31.0",
+    "q": "~1.0.0",
+    "xml2js": "~0.4.1",
+    "apis-helpers": "~0.0.1",
+    "xregexp": "~2.0.0"
+  }
+}
